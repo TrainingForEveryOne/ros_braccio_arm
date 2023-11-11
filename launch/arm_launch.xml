@@ -1,0 +1,10 @@
+<launch>
+   <!-- Load the urdf into the parameter server. -->
+   <param name="robot_description" command="$(find xacro)/xacro $(find arm_demo)/urdf/braccio.urdf"/>
+    
+   <node pkg="robot_state_publisher" type="robot_state_publisher" name="arm_robot" />
+   <!--node pkg="joint_state_publisher" type="joint_state_publisher" name="arm_joint_state" /-->
+   <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="arm_ctrl_panel" />
+   <node pkg="rviz" type="rviz" name="arm_rviz" args="-d $(find arm_demo)/rviz/arm_rviz.rviz" required="true" />
+
+</launch>
