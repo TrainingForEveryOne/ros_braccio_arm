@@ -14,10 +14,12 @@ After download, go to workspace directory and run catkin_make
 cd ~/catkin_ws
 catkin_make
 ```
-Install the successful make package
+Install the successful make package and source the setup.bash
 ```
 catkin_make install
+source ~/catkin_ws/devel/setup.bash
 ```
+
 Launch the Braccio Arm Control package
 ```
 roslaunch ros_braccio_arm arm_launch.xml
