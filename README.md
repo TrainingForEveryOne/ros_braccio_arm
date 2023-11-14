@@ -9,6 +9,10 @@ rmdir my_folder # remove my_folder directory
 rm file         # remove file
 sudo apt-get install package_name # install package_name
 ```
+# Useful package for multi-window terminal (optional)
+```
+sudo apt install terminator # for multi-window terminal
+```
 # Activity 1: Create a New Workspace
 ```
 cd ~
@@ -40,13 +44,14 @@ roscore  # terminal 1
 rosrun turtlesim turtlesim_node  # terminal 2
 rosrun turtlesim turtle_teleop_key  # terminal 3, use arrow keys to move the turtle
 rosnode list  # terminal 4
-rosnode info /teleop_key
+rosnode info /teleop_turtle
 ```
 # Activity 5: ROS Launch
 ```
 # terminal 1
 cd ~/catkin_ws/src
 git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+sudo apt install ros-kinetic-turtlebot3 # install the dependency turtlebot3 package
 cd ~/catkin_ws && catkin_make
 source devel/setup.bash
 
