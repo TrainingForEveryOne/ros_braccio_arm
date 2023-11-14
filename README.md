@@ -1,13 +1,14 @@
 # Unix Command Tips
-ls # list the items in the directory
-cd my_folder # change directory to my_folder
-cd .. # change directory to parent folder
-cd ~ # change directory to /home/ros folder
+```
+ls              # list the items in the directory
+cd my_folder    # change directory to my_folder
+cd ..           # change directory to parent folder
+cd ~            # change directory to /home/ros folder
 mkdir my_folder # create new my_folder directory
 rmdir my_folder # remove my_folder directory
-rm file # remove file
+rm file         # remove file
 sudo apt-get install package_name # install package_name
-
+```
 # Activity 1: Create a New Workspace
 ```
 cd ~
