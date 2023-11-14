@@ -120,7 +120,7 @@ roslaunch my_robotics display.launch model:='visual.urdf'
 # xacro --inorder robot1.xacro > robot1.urdf
 roslaunch my_robotics display.launch model:='robot1.urdf' # move the sliders
 ```
-# Braccio Arm Control 
+# (Optional) Braccio Arm Control 
 First, check the required packages already install, if not:
 ```
 sudo apt install -y ros-kinetic-joint-state-publisher-gui
