@@ -126,15 +126,32 @@ rviz # terminal 2, observe one turtle tracks the other turtle
 # add the TF plugin to the left panel, observe turtle1 and turtle2 frames, both are children of world frame
 # set the view of the world to TopDownOrtho
 ```
-# Activity 13: Visualize URDF in RViz
+# Activity 13: Construct display.launch file
 ```
-# add visual.urdf to the display.launch file
-roslaunch my_robotics display.launch model:='visual.urdf'
+# add display.launch file to launch folder
+cd ~/ros_train/src
+git clone https://github.com/twming/ros_braccio_arm
+cd ~/ros_train/src/ros_braccio_arm/launch
+
+# create a new file launch in this folder
+<launch>
+  <arg name="gui" default="true" />
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+  <node if="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+  <node unless="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find trobotics_arv)/rviz/urdf.rviz" required="true" />
+</launch>
 ```
-# Activity 14: Xacro
+# Activity 14: Xacro and Visualize URDF in RViz
 ```
-# xacro --inorder robot1.xacro > robot1.urdf
-roslaunch my_robotics display.launch model:='robot1.urdf' # move the sliders
+cd ~/ros_train/src/ros_braccio_arm/urdf
+xacro --inorder robot1.xacro > robot1.urdf
+
+cd ~/ros_train
+catkin_make
+source devel/setup.bash
+roslaunch ros_braccio_arm display.launch model:='/home/ros/ros_train/src/ros_braccio_arm/urdf/robot1.urdf' # move the sliders
 ```
 # (Optional) Braccio Arm Control 
 First, check the required packages already install, if not:
@@ -142,22 +159,6 @@ First, check the required packages already install, if not:
 sudo apt install -y ros-kinetic-joint-state-publisher-gui
 sudo apt install -y ros-kinetic-robot-state-publisher
 ```
-Go to workspace src directory and download the ros_braccio_arm package
-```
-cd ~/catkin_ws/src
-git clone http://github.com/twming/ros_braccio_arm.git
-```
-After download, go to workspace directory and run catkin_make
-```
-cd ~/catkin_ws
-catkin_make
-```
-Install the successful make package and source the setup.bash
-```
-catkin_make install
-source ~/catkin_ws/devel/setup.bash
-```
-
 Launch the Braccio Arm Control package
 ```
 roslaunch ros_braccio_arm arm_launch.xml
