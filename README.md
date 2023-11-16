@@ -59,7 +59,7 @@ source devel/setup.bash
 roscore
 
 # terminal 3
-echo "export TURTLEBOT3_MODEL=burger >> ~/.bashrc"
+echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
 source ~/.bashrc
 roslaunch turtlebot3_fake turtlebot3_fake.launch
 
