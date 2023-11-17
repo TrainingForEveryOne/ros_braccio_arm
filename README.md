@@ -140,7 +140,7 @@ cd ~/ros_train/src/ros_braccio_arm/launch
   <node if="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
   <node unless="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find trobotics_arv)/rviz/urdf.rviz" required="true" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ros_braccio_arm)/rviz/urdf.rviz" required="true" />
 </launch>
 ```
 # Activity 14: Xacro and Visualize URDF in RViz
