@@ -129,9 +129,15 @@ rviz # terminal 2, observe one turtle tracks the other turtle
 # Activity 13: Construct display.launch file
 ```
 # add display.launch file to launch folder
+sudo apt install -y ros-kinetic-joint-state-publisher-gui
 cd ~/ros_train/src
 git clone https://github.com/twming/ros_braccio_arm
+cd ~/ros_train
+catkin_make
+
 cd ~/ros_train/src/ros_braccio_arm/launch
+touch display.launch
+gedit display.launch
 
 # create a new file launch in this folder
 <launch>
