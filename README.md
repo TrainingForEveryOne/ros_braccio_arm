@@ -157,7 +157,9 @@ xacro --inorder robot1.xacro > robot1.urdf
 cd ~/ros_train
 catkin_make
 source devel/setup.bash
-roslaunch ros_braccio_arm display.launch model:='/home/ros/ros_train/src/ros_braccio_arm/urdf/robot1.urdf' # move the sliders
+roslaunch ros_braccio_arm display.launch model:='/home/ros/ros_train/src/ros_braccio_arm/urdf/robot1.urdf'
+# Add -> RobotModel
+# move the sliders
 ```
 # (Optional) Braccio Arm Control 
 First, check the required packages already install, if not:
