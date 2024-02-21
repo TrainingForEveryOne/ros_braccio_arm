@@ -169,7 +169,7 @@ sudo apt install -y ros-kinetic-robot-state-publisher
 ```
 Setup your VM USB port, (Right Click) Setting -> USB -> Arduino (Add). Modify the ttyACM0 and arm_control_node.py to 755
 ```
-sudo chmod 755 /dev/ttyACM0
+sudo chmod 777 /dev/ttyACM0
 sudo chmod 755 /home/ros/ros_train/src/ros_braccio_arm/scripts/arm_control_node.py
 ```
 Uncomment the arm write (line 25) and serial write (line 32) in the file arm_control_node.py. Launch the Braccio Arm Control package
