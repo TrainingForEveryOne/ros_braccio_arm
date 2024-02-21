@@ -165,6 +165,11 @@ First, check the required packages already install, if not:
 sudo apt install -y ros-kinetic-joint-state-publisher-gui
 sudo apt install -y ros-kinetic-robot-state-publisher
 ```
+Setup your VM USB port, (Right Click) Setting -> USB -> Arduino (Add). Modify the ttyACM0 and arm_control_node.py to 755
+```
+sudo chmod 755 /dev/ttyACM0
+sudo chmod 755 /home/ros/ros_train/src/ros_braccio_arm/scripts/arm_control_node.py
+```
 Launch the Braccio Arm Control package
 ```
 roslaunch ros_braccio_arm arm_launch.xml
