@@ -117,7 +117,7 @@ rosbag play <bagfile>
 # Activity 11: TF Demo -1
 ```
 sudo apt-get install ros-kinetic-turtle-tf2 ros-kinetic-tf2-tools ros-kinetic-tf # terminal 1
-roslaunch turtle_tf2 turtle_tr2_demo.launch 
+roslaunch turtle_tf2 turtle_tf2_demo.launch 
 rviz # terminal 2, observe one turtle tracks the other turtle
 ```
 # Activity 12: TF Demo -2
