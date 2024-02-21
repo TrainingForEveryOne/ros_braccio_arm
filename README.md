@@ -172,7 +172,7 @@ sudo chmod 755 /home/ros/ros_train/src/ros_braccio_arm/scripts/arm_control_node.
 ```
 Uncomment the arm write (line 25) and serial write (line 32) in the file arm_control_node.py. Launch the Braccio Arm Control package
 ```
-roslaunch ros_braccio_arm arm_launch.xml
+roslaunch ros_braccio_arm arm_launch
 ```
 Control the arm movement from the GUI interface
 ```
