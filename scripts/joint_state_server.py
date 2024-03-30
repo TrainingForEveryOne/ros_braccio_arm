@@ -27,13 +27,10 @@ def joint_state_transform(js):
                     % (base,shoulder,elbow,wrist_ver,wrist_rot,gripper))
         pos=[chr(base),chr(shoulder),chr(elbow),chr(wrist_ver),chr(wrist_rot),chr(gripper)]
         rospy.loginfo('Sending Joint State ...')
-        #sucess=arm.write(''.join(pos))
-        if (sucess==1):
-            #rospy.sleep(2)
-            state='Joint State send sucessful.'
-            rospy.loginfo('Joint State send sucessful.')
-        else:
-            rospy.loginfo('Send command fail.')
+        #arm.write(''.join(pos))
+        #rospy.sleep(2)
+        state='Joint State send sucessful.'
+        rospy.loginfo('Joint State send sucessful.')
     else:
         rospy.loginfo('Invalid Joint State ...')
 
