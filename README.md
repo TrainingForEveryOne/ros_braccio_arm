@@ -161,22 +161,29 @@ roslaunch ros_braccio_arm display.launch model:='/home/ros/ros_train/src/ros_bra
 # Add -> RobotModel
 # move the sliders
 ```
-# (Optional) Braccio Arm Control 
+# (Optional) Braccio Arm Setup 
 First, check the required packages already install, if not:
 ```
 sudo apt install -y ros-kinetic-joint-state-publisher-gui
 sudo apt install -y ros-kinetic-robot-state-publisher
 ```
-Setup your VM USB port, (Right Click) Setting -> USB -> Arduino (Add). Modify the ttyACM0 and arm_control_node.py to 755
+Setup your VM USB port, (Right Click) Setting -> USB -> Arduino (Add). Modify the ttyACM0 and *.py to 755
 ```
 sudo chmod 777 /dev/ttyACM0
-sudo chmod 755 /home/ros/ros_train/src/ros_braccio_arm/scripts/arm_control_node.py
+sudo chmod 755 /home/ros/ros_train/src/ros_braccio_arm/scripts/*.py
 ```
 Uncomment the arm write (line 25) and serial write (line 32) in the file arm_control_node.py. Launch the Braccio Arm Control package
 ```
 roslaunch ros_braccio_arm arm_launch
 ```
-Control the arm movement from the GUI interface
+# (Optional) Braccio Arm Control through JointState Message
+Control the arm movement from the GUI interface. Launch the Braccio Arm Joint State write through Topic
 ```
 rosrun ros_braccio_arm arm_control_node.py
+```
+# (Optional) Braccio Arm Control through JointState Service
+Uncomment the arm write (line 14,15,30) in the file joint_state_server.py. Launch the Braccio Arm Joint State write through Service
+```
+rosrun ros_braccio_arm joint_state_server.py
+rosrun ros_braccio_arm joint_state_client_with_button.py
 ```
