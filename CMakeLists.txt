@@ -6,13 +6,26 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   sensor_msgs
+  message_generation
+)
+
+## Generate services in the 'srv' folder
+add_service_files(
+  FILES
+  joint_state_service.srv
+)
+
+## Generate added messages and services with any dependencies listed here
+generate_messages(
+  DEPENDENCIES
+  std_msgs
 )
 
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES arm_demo
-#  CATKIN_DEPENDS other_catkin_pkg
-#  DEPENDS system_lib
+  #INCLUDE_DIRS include
+  LIBRARIES ros_braccio_arm
+  CATKIN_DEPENDS roscpp rospy std_msgs message_runtime
+  DEPENDS system_lib
 )
 
 ###########
