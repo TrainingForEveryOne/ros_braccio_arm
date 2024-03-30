@@ -3,7 +3,7 @@ import rospy
 import serial
 # TODO
 # Step 1: Import your joint_state_service and joint_state_serviceResponse
-from my_robotics.srv import joint_state_service,joint_state_serviceResponse
+from ros_braccio_arm.srv import joint_state_service,joint_state_serviceResponse
 
 base=90
 shoulder=90

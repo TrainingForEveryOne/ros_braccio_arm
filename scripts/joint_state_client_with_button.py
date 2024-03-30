@@ -3,7 +3,7 @@ import rospy
 from sensor_msgs.msg import JointState
 # TODO 
 # Step 1 : Import joint_state_service and joint_state_serviceResponse
-from my_robotics.srv import joint_state_service,joint_state_serviceResponse
+from ros_braccio_arm.srv import joint_state_service,joint_state_serviceResponse
 from Tkinter import *
 
 class Window(Frame):
