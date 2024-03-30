@@ -1,0 +1,8 @@
+float32 base
+float32 shoulder
+float32 elbow
+float32 wrist_ver
+float32 wrist_rot
+float32 gripper
+---
+string state
